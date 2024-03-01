@@ -78,7 +78,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    /**
+    /**¿’
      * @Route("/article/delete/{id}", name="article_delete", methods={"POST"})
      */
     #[Route('/article/delete/{slug}', name: 'article_delete')]

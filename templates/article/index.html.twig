@@ -9,7 +9,7 @@
 
 		{% for article in articles %}
 			<h2>
-				<a href="{{ path('article_show', {'slug': article.slug}) }}">{{ article.title }}</a>
+				<a href="{{ path('article_show', {'slug': article.slug}) }}">{{ article.title|raw }}</a>
 			</h2>
 			<div>{{ article.content|raw }}</div>
 		{% else %}
