@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>{{ article.title }}</h1>
+		<div>{{ article.content|raw }}</div>
+
+		{% if is_granted('ROLE_ADMIN') %}
+			<a href="{{ path('article_edit', {'slug': article.slug}) }}">Éditer</a>
+			<form action="{{ path('article_delete', {'slug': article.slug}) }}" method="post" onsubmit="return confirm('Êtes-vous sûr?');">
+				<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">
+				<button type="submit">Supprimer</button>
+			</form>
+		{% endif %}
+
+		<a href="{{ path('article_index') }}">Retour à la liste</a>
+	</div>
+{% endblock %}

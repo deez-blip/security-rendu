@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouvel article
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Créer un nouvel article</h1>
+
+		{{ form_start(articleForm) }}
+		{{ form_widget(articleForm) }}
+		<button type="submit" class="btn">Créer</button>
+		{{ form_end(articleForm) }}
+
+		<a href="{{ path('article_index') }}">Retour à la liste</a>
+	</div>
+{% endblock %}

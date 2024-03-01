@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Éditer l'article
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Éditer l'article</h1>
+
+		{{ form_start(articleForm) }}
+		{{ form_widget(articleForm) }}
+		<button type="submit" class="btn">Mettre à jour</button>
+		{{ form_end(articleForm) }}
+
+		<a href="{{ path('article_show', {'slug': article.slug}) }}">Annuler et retourner à l'article</a>
+	</div>
+{% endblock %}
